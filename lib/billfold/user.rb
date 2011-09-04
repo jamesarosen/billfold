@@ -1,3 +1,5 @@
+require 'billfold'
+
 module Billfold
 
   # ## Billfold::User

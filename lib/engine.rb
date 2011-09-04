@@ -20,9 +20,5 @@ module Billfold
     ActiveSupport.on_load(:action_controller) do
       include Billfold::ControllerSupport
     end
-
-    ActiveSupport.on_load(:active_record) do
-      require 'billfold/active_record_identity'
-    end
   end
 end
