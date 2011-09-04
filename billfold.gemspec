@@ -15,6 +15,7 @@ Gem::Specification.new do |gem|
   gem.required_rubygems_version = Gem::Requirement.new('>= 1.3.6') if gem.respond_to? :required_rubygems_version=
 
   gem.add_development_dependency  'rails',        '~> 3.1'
+  gem.add_development_dependency  'bundler'
   gem.add_development_dependency  'mocha'
   gem.add_development_dependency  'rake'
   gem.add_development_dependency  'redgreen',     '~> 1.2'
