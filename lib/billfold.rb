@@ -23,7 +23,7 @@ module Billfold
     # Used by `Billfold::AuthenticationController.update_or_create` By
     # default, `::Identity` if that exists.
     def identity_class
-      @user_class ||= (Object.const_defined?(:Identity) ? Object.const_get(:Identity) : nil)
+      @identity_class ||= (Object.const_defined?(:Identity) ? Object.const_get(:Identity) : nil)
     end
 
     attr_writer :identity_class
