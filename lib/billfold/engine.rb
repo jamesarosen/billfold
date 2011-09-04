@@ -3,6 +3,7 @@ require 'rails'
 
 module Billfold
   class Engine < Rails::Engine
+    engine_name :my_rails_engine
 
     # Config defaults
     config.mount_at = '/'
