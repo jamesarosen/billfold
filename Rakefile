@@ -1,23 +1,26 @@
+# encoding: UTF-8
 require 'rubygems'
+begin
+  require 'bundler/setup'
+rescue LoadError
+  puts 'You must `gem install bundler` and `bundle install` to run rake tasks'
+end
+
 require 'rake'
+require 'rdoc/task'
 
-require 'rake/testtask'
-Rake::TestTask.new(:test) do |t|
-  t.libs << 'app/controllers' << 'app/mailers' << 'app/models' << 'lib'
-  t.pattern = 'test_app/test/**/*_test.rb'
-  t.verbose = true
-end
+require 'rspec/core'
+require 'rspec/core/rake_task'
+RSpec::Core::RakeTask.new(:spec)
 
-require 'rake/rdoctask'
-Rake::RDocTask.new do |rdoc|
-  version = File.exist?('VERSION') ? File.read('VERSION') : ""
+desc "Default: run the unit tests."
+task :default => [:spec]
 
+Rake::RDocTask.new(:rdoc) do |rdoc|
   rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = "Billfold #{version}"
-  rdoc.rdoc_files.include('README*')
-  rdoc.rdoc_files.include('Gemfile')
-  rdoc.rdoc_files.include('app/**/*.rb')
+  rdoc.title    = "Billfold #{File.read './VERSION'}"
+  rdoc.options << '--line-numbers' << '--inline-source'
+  rdoc.rdoc_files.include('README.rdoc')
   rdoc.rdoc_files.include('lib/**/*.rb')
+  rdoc.rdoc_files.include('app/**/*.rb')
 end
-
-task :default => :test

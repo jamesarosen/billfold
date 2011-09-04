@@ -18,7 +18,7 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency  'bundler'
   gem.add_development_dependency  'mocha'
   gem.add_development_dependency  'rake'
-  gem.add_development_dependency  'redgreen',     '~> 1.2'
-  gem.add_development_dependency  'sqlite3-ruby', '~> 1.3'
-  gem.add_development_dependency  'factory_girl', '~> 1.3'
+  gem.add_development_dependency  'rspec-rails'
+  gem.add_development_dependency  'sqlite3'
+  gem.add_development_dependency  'factory_girl'
 end
