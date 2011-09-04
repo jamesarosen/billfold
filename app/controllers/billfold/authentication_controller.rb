@@ -4,7 +4,7 @@ class AuthenticationController < ApplicationController
 
   def update_or_create
     omniauth_hash = request.env['omniauth.auth'] || {}
-    identity = Billfold::Identity.update_or_create!({
+    identity = Billfold.identity_class.update_or_create!({
       :provider => params[:provider],
       :value    => omniauth_hash['uid'],
       :data     => omniauth_hash['user_info'],

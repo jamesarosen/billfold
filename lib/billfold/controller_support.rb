@@ -9,7 +9,7 @@ module Billfold
     #
     # Return the current user, if signed in.
     def current_user
-      @current_user ||= ::Billfold::User.find_by_id(session[:user_id])
+      @current_user ||= ::Billfold::user_class.find_by_id(session[:user_id])
     end
 
     # ### Billfold::ControllerSupport#current_user=
