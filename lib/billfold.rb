@@ -13,7 +13,7 @@ module Billfold
     # and by `Billfold::ActiveRecordIdentity` for the `belongs_to :user`
     # association. By default, `::User` if that exists.
     def user_class
-      @user_class ||= (Object.const_defined?(:User) ? User : nil)
+      @user_class ||= (Object.const_defined?(:User) ? Object.const_get(:User) : nil)
     end
 
     attr_writer :user_class
@@ -23,7 +23,7 @@ module Billfold
     # Used by `Billfold::AuthenticationController.update_or_create` By
     # default, `::Identity` if that exists.
     def identity_class
-      @user_class ||= (Object.const_defined?(:Identity) ? Identity : nil)
+      @user_class ||= (Object.const_defined?(:Identity) ? Object.const_get(:Identity) : nil)
     end
 
     attr_writer :identity_class
