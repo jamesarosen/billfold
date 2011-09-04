@@ -1,7 +1,5 @@
 require 'billfold'
 require 'rails'
-require 'action_controller'
-require 'application_helper'
 
 module Billfold
   class Engine < Rails::Engine
