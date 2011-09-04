@@ -15,7 +15,6 @@ ActiveRecord::Schema.define(:version => 20110904204023) do
 
   create_table "identities", :force => true do |t|
     t.integer  "user_id",    :null => false
-    t.string   "type",       :null => false
     t.string   "provider",   :null => false
     t.string   "value",      :null => false
     t.text     "data"

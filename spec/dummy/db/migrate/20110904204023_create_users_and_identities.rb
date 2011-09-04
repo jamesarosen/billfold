@@ -10,7 +10,6 @@ class CreateUsersAndIdentities < ActiveRecord::Migration
 
     create_table :identities do |t|
       t.integer    :user_id,      :null => false
-      t.string     :type,         :null => false
       t.string     :provider,     :null => false
       t.string     :value,        :null => false
       t.text       :data

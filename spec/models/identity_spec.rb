@@ -30,13 +30,13 @@ describe Identity do
       end
     end
 
-    context 'with type "twitter"' do
+    context 'with provider "twitter"' do
       let(:arguments) {
         {
-          :type  => 'twitter',
-          :value => uid,
-          :user  => nil,
-          :data  => { 'name' => name }
+          :provider => 'twitter',
+          :value    => uid,
+          :user     => nil,
+          :data     => { 'name' => name }
         }
       }
 
@@ -54,10 +54,10 @@ describe Identity do
       context 'and a previously-unused UID' do
         before(:each) do
           @result = subject.update_or_create!({
-            :type  => 'twitter',
-            :value => uid,
-            :user  => user,
-            :data  => { 'name' => name }
+            :provider => 'twitter',
+            :value    => uid,
+            :user     => user,
+            :data     => { 'name' => name }
           })
         end
 
@@ -86,10 +86,10 @@ describe Identity do
       context 'and a UID previously used by the user' do
         before(:each) do
           @result = subject.update_or_create!({
-            :type  => 'twitter',
-            :value => identity.value,
-            :user  => identity.user,
-            :data  => { 'name' => 'new name' }
+            :provider => 'twitter',
+            :value    => identity.value,
+            :user     => identity.user,
+            :data     => { 'name' => 'new name' }
           })
         end
 
@@ -110,9 +110,9 @@ describe Identity do
           Identity.expects(:with_provider_and_value).returns(identity)
           @original_user.expects(:merge_into!).with(other_user)
           subject.update_or_create!({
-            :type  => 'twitter',
-            :value => identity.value,
-            :user  => other_user
+            :provider => 'twitter',
+            :value    => identity.value,
+            :user     => other_user
           })
         end
       end

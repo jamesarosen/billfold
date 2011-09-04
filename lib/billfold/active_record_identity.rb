@@ -17,8 +17,8 @@ module Billfold
       serialize  :data
       validates_presence_of :user, :provider, :value
 
-      # There can only be one identity with a given type and value
-      validates_uniqueness_of :value, :scope => [ :type ]
+      # There can only be one identity with a given provider and value
+      validates_uniqueness_of :value, :scope => [ :provider ]
     end
 
     module ClassMethods
