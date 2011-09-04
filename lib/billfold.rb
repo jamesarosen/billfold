@@ -1,5 +1,11 @@
 module Billfold
 
+  autoload :ControllerSupport,    'billfold/controller_support'
+  autoload :Identity,             'billfold/identity'
+  autoload :User,                 'billfold/user'
+  autoload :ActiveRecordIdentity, 'billfold/active_record_identity'
+  autoload :ActiveRecordUser,     'billfold/active_record_user'
+
   class <<self
     # ## Billfold.user_class
     #
