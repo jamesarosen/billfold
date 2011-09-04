@@ -47,7 +47,7 @@ describe Identity do
 
         it "uses the display name from the identity" do
           id = subject.update_or_create!(arguments)
-          id.user.display_name.should == id.display_name_for_user
+          id.user.name.should == id.name_for_user
         end
       end
 
