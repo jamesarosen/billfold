@@ -12,6 +12,7 @@ module Billfold
     extend ActiveSupport::Concern
 
     included do
+      raise "Cannot define identity class until Billfold.user_class is set" unless Billfold.user_class.present?
       belongs_to :user, :class_name => Billfold.user_class.to_s
       serialize  :data
       validates_presence_of :user, :provider, :value
