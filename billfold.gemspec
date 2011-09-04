@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |gem|
   gem.name = 'billfold'
-  gem.version = '0.0.0'
+  gem.version = File.read('VERSION')
   gem.description = %q{Identity Management with OmniAuth}
   gem.summary = gem.description
   gem.email = ['james.a.rosen@gmail.com']
@@ -13,4 +13,11 @@ Gem::Specification.new do |gem|
   gem.test_files = `git ls-files -- {test,spec,features}/*`.split("\n")
   gem.require_paths = ['lib']
   gem.required_rubygems_version = Gem::Requirement.new('>= 1.3.6') if gem.respond_to? :required_rubygems_version=
+
+  gem.add_development_dependency  'rails',        '~> 3.1'
+  gem.add_development_dependency  'mocha'
+  gem.add_development_dependency  'rake'
+  gem.add_development_dependency  'redgreen',     '~> 1.2'
+  gem.add_development_dependency  'sqlite3-ruby', '~> 1.3'
+  gem.add_development_dependency  'factory_girl', '~> 1.3'
 end
