@@ -30,5 +30,5 @@ module Billfold
   end
 
   require 'billfold/identity'
-  require 'engine' if defined?(Rails) && Rails::VERSION::MAJOR == 3
+  require 'billfold/engine' if defined?(Rails) && Rails::VERSION::MAJOR == 3
 end
