@@ -61,7 +61,7 @@ module Billfold
       # the same `:value` and that `Identity` is owned by a *different* `User`,
       # this method merges that User into `:user` and updates the `Identity`.
       def update_or_create!(attributes = {})
-        identity = with_provider_and_value(attributes[:provider], attributes[:value]).first
+        identity = with_provider_and_value(attributes[:provider], attributes[:value])
         if identity
           old_owner, new_owner = identity.user, attributes[:user]
           transaction do
