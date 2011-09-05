@@ -72,7 +72,7 @@ module Billfold
           end
         else
           identity = new(attributes)
-          identity.user = attributes[:user] || Billfold.user_class.new(:name => identity.name_for_user)
+          identity.user = attributes[:user] || ::Billfold.user_class.new(:name => identity.name_for_user)
           identity.save!
         end
         identity

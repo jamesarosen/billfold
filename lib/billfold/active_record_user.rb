@@ -12,8 +12,9 @@ module Billfold
     extend ActiveSupport::Concern
 
     included do
+      raise "Cannot define user class until Billfold.identity_class_name is set" unless Billfold.identity_class_name.present?
       validates_presence_of :name
-      has_many :identities
+      has_many :identities, :class_name => ::Billfold.identity_class_name
     end
 
     module InstanceMethods
