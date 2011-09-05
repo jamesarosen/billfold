@@ -1,6 +1,7 @@
 en:
   billfold:
     delete: delete
+    please_sign_in: Please sign in
     identities:
       index:
         title: Your Identities

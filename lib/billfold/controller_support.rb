@@ -39,7 +39,7 @@ module Billfold
       # implementation adds a flash message and redirects to /
       def require_sign_in
         unless current_user
-          flash['info'] = 'Please sign in'
+          flash['info'] = I18n.t 'billfold.please_sign_in'
           redirect_to root_path
         end
       end
