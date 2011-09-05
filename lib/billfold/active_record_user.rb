@@ -13,6 +13,7 @@ module Billfold
 
     included do
       validates_presence_of :name
+      has_many :identities
     end
 
     module InstanceMethods
