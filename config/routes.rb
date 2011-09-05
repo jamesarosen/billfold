@@ -4,4 +4,8 @@ Rails.application.routes.draw do
 
   post "#{mount_at}auth/:provider/callback" => 'billfold/identities#update_or_create'
 
+  resources :identities, :only => [ :index, :destroy ],
+                         :module => 'billfold',
+                         :path => "#{mount_at}/identities"
+
 end

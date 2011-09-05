@@ -11,4 +11,21 @@ describe Billfold::IdentitiesController do
       )
   end
 
+  it 'routes /identities to index' do
+    { :get => '/identities' }.
+      should route_to(
+        :controller => 'billfold/identities',
+        :action => 'index'
+      )
+  end
+
+  it 'routes /identities/:id to destroy' do
+    { :delete => '/identities/12' }.
+      should route_to(
+        :controller => 'billfold/identities',
+        :action => 'destroy',
+        :id => '12'
+      )
+  end
+
 end

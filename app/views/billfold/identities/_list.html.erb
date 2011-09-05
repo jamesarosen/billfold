@@ -1,0 +1,8 @@
+<ul class='identities'>
+  <% identities.each do |id| %>
+    <li class="identity <%= id.provider %>">
+      <%= id.value %>
+      <%= button_to t('billfold.delete'), identity_path(id), :method => :delete, :remote => true, :confirm => true %>
+    </li>
+  <% end %>
+</ul>
