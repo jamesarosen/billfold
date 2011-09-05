@@ -2,7 +2,7 @@
 
 Billfold provides backend Rails support for OmniAuth. Specifically, it
 routes `/auth/:provider/callback` to
-`Billfold::AuthenticationController#update_or_create!`, which handles
+`Billfold::IdentitiesController#update_or_create!`, which handles
 identity management.
 
 ### Requirements

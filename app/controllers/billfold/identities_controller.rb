@@ -1,5 +1,5 @@
 module Billfold
-  class AuthenticationController < ApplicationController
+  class IdentitiesController < ApplicationController
 
     respond_to :html, :json, :xml
 
