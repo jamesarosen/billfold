@@ -22,6 +22,17 @@ module Billfold
       @current_user = user
     end
 
+    # ### Billfold::ControllerSupport#require_sign_in
+    #
+    # A before filter that requires a user to be signed in. The default
+    # implementation adds a flash message and redirects to /
+    def require_sign_in
+      unless current_user
+        flash['info'] = 'Please sign in'
+        redirect_to root_path
+      end
+    end
+
   end
 
 end
