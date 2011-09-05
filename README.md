@@ -13,7 +13,7 @@ identity management.
 
 1. Add `gem 'billfold'` to your `Gemfile`
 1. Run `bundle` (or `bundle install`)
-1. Run `rails g billfold:migration`
+1. Run `rails g billfold:migration` if you're using Rails migrations
 
 ### Configuration
 
@@ -37,3 +37,12 @@ You'll also have do define the following methods:
  * `Identity#user`
  * `Identity#update_attributes!`
  * `Identity#save!`
+
+#### Classes
+
+In either case, if you want to use something other than `User` and `Identity`
+for your classes, you can, but you have to tell Billfold. You can do that like
+so:
+
+    Billfold.user_class_name = 'My::User'
+    Billfold.identity_class_name = 'My::UserIdentity'
