@@ -2,8 +2,10 @@
 
 Billfold provides backend Rails support for OmniAuth. Specifically, it
 routes `/auth/:provider/callback` to
-`Billfold::IdentitiesController#update_or_create!`, which handles
-identity management.
+`Billfold::IdentitiesController#update_or_create`, which handles
+updating and creating user identities from OmniAuth hashes. It also
+provides `GET /identities` and `DELETE /identities/:id` for users to manage
+the identities attached to their account.
 
 ### Requirements
 
@@ -46,3 +48,8 @@ so:
 
     Billfold.user_class_name = 'My::User'
     Billfold.identity_class_name = 'My::UserIdentity'
+
+#### Internationalization
+
+See `config/locales/en.yml` for a list of keys that must be translated to
+make the models, views, and controllers fully internationalized.
