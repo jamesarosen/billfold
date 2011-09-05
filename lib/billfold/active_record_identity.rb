@@ -13,7 +13,7 @@ module Billfold
 
     included do
       raise "Cannot define identity class until Billfold.user_class_name is set" unless Billfold.user_class_name.present?
-      belongs_to :user, :class_name => Billfold.user_class_name
+      belongs_to :user, :class_name => ::Billfold.user_class_name
       serialize  :data
       validates_presence_of :user, :provider, :value
 

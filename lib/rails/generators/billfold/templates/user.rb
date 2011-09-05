@@ -1,4 +1,4 @@
-class Identity < ActiveRecord::Base
+class User < ActiveRecord::Base
 
   include Billfold::ActiveRecordUser
 
