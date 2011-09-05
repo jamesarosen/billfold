@@ -7,6 +7,8 @@ module Billfold
   # Gets mixed in to `ApplicationController` automatically.
   module ControllerSupport
 
+    protected
+
     # ### Billfold::ControllerSupport#current_user
     #
     # Return the current user, if signed in.
