@@ -18,6 +18,7 @@ class CreateUsersAndIdentities < ActiveRecord::Migration
   end
 
   def self.down
-    drop_table :identities, :users
+    drop_table :identities
+    drop_table :users
   end
 end
