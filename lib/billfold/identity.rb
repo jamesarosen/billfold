@@ -67,8 +67,9 @@ module Billfold
         if identity
           old_owner, new_owner = identity.user, attributes[:user]
           transaction do
+            attributes.delete(:user) if attributes[:user].nil?
             identity.update_attributes!(attributes)
-            old_owner.merge_into!(new_owner) if old_owner != new_owner
+            old_owner.merge_into!(new_owner) if new_owner && old_owner != new_owner
           end
         else
           identity = new(attributes)
