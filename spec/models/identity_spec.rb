@@ -116,6 +116,20 @@ describe Identity do
           })
         end
       end
+      
+      context 'and a UID previously used with a nil user' do
+        before(:each) do
+          @result = subject.update_or_create!({
+            :provider => 'twitter',
+            :value    => identity.value,
+            :user     => nil
+          })
+        end
+
+        it 'uses the existing user' do
+          @result.user.should == identity.user
+        end
+      end
     end
 
   end
