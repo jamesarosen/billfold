@@ -9,6 +9,13 @@ describe Billfold::IdentitiesController do
         :action => 'update_or_create',
         :provider => 'cheez'
       )
+    
+    { :get => '/auth/cheez/callback' }.
+      should route_to(
+        :controller => 'billfold/identities',
+        :action => 'update_or_create',
+        :provider => 'cheez'
+      )
   end
 
   it 'routes /identities to index' do
